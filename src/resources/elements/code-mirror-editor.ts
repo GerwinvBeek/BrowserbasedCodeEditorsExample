@@ -1,4 +1,4 @@
-import { autoinject, bindable, customElement } from 'aurelia-framework';
+import { autoinject, bindable, customElement, transient } from 'aurelia-framework';
 import * as CodeMirror from "codemirror";
 import 'codemirror/mode/javascript/javascript.js';
 import 'codemirror/theme/base16-dark.css';
@@ -11,15 +11,18 @@ import 'codemirror'
 
 
 
-
 @customElement('code-mirror-editor')
+@transient()
 export class CodeMirrorEditor {
+
+    @bindable
+    public mode: string;
 
     public editorHost: HTMLTextAreaElement;
 
     public attached(): void {
         var myCodeMirror = CodeMirror.fromTextArea(this.editorHost, {
-            mode: "javascript",
+            mode: this.mode,
             lineNumbers: true,
             theme: "base16-dark",
             indentUnit: 4,

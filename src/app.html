@@ -3,16 +3,40 @@
   <require from="./resources/elements/code-mirror-editor"></require>
   <require from="./resources/elements/ace-editor"></require>
 
+
   <h3>Monaco</h3>
-  <div class="page-host">
-    <monaco-editor options.bind="{language:'typescript'}" />
+  <div id="editor">
+    <div id="code">
+      <h5>typescript</h5>
+      <monaco-editor mode="typescript" />
+    </div>
+    <div id="code">
+      <h5>html</h5>
+      <monaco-editor mode="html" />
+    </div>
   </div>
+
   <h3>Code Mirror</h3>
-  <div class="page-host">
-    <code-mirror-editor />
+  <div id="editor">
+    <div id="code">
+      <h5>typescript</h5>
+      <code-mirror-editor mode="javascript" />
+    </div>
+    <div id="code">
+      <h5>html</h5>
+      <code-mirror-editor mode="html" />
+    </div>
   </div>
+
   <h3>Ace</h3>
-  <div class="page-host">
-    <ace-editor />
+  <div id="editor">
+    <div id="code">
+      <h5>typescript</h5>
+      <ace-editor mode="javascript" />
+    </div>
+    <div id="code">
+      <h5>html</h5>
+      <ace-editor mode="html" />
+    </div>
   </div>
 </template>
