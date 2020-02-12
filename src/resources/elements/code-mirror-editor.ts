@@ -21,7 +21,7 @@ export class CodeMirrorEditor {
         var myCodeMirror = CodeMirror.fromTextArea(this.editorHost, {
             mode: "javascript",
             lineNumbers: true,
-            //theme: "base16-dark",
+            theme: "base16-dark",
             indentUnit: 4,
             extraKeys: {
                 "Ctrl-Space": "autocomplete",

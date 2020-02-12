@@ -14,7 +14,7 @@ export class MonacoEditor {
         this.options.roundedSelection = false;
         this.options.scrollBeyondLastLine = false;
         this.options.readOnly = false;
-        //this.options.theme = "vs-dark";
+        this.options.theme = "vs-dark";
 
         let editor = monaco.editor.create(this.editorHost, this.options);
     }

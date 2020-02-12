@@ -11,10 +11,11 @@ export class AceEditor {
     public editorHost: HTMLElement;
 
     public attached(): void {
-        ace.edit(this.editorHost, {
+        var editor = ace.edit(this.editorHost, {
             mode: "ace/mode/javascript",
             enableBasicAutocompletion: true,
-            //theme: "ace/theme/monokai"
+            theme: "ace/theme/monokai"
         });
+        editor.setShowPrintMargin(false);
     }
 }

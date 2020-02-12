@@ -1,4 +1,6 @@
-# `monaco-test`
+# `Browser code editors aurelia`
+## This project is an Aurelia application with the monaco, codemirror and ace editors.
+## This project is just an example project so not for every user case.
 
 This project is bootstrapped by [aurelia-cli](https://github.com/aurelia/cli).
 
