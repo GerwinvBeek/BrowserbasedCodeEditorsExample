@@ -1,0 +1,18 @@
+<template>
+  <require from="./resources/elements/monaco-editor"></require>
+  <require from="./resources/elements/code-mirror-editor"></require>
+  <require from="./resources/elements/ace-editor"></require>
+
+  <h3>Monaco</h3>
+  <div class="page-host">
+    <monaco-editor options.bind="{language:'typescript'}" />
+  </div>
+  <h3>Code Mirror</h3>
+  <div class="page-host">
+    <code-mirror-editor />
+  </div>
+  <h3>Ace</h3>
+  <div class="page-host">
+    <ace-editor />
+  </div>
+</template>
