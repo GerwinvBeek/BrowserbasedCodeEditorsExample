@@ -8,6 +8,7 @@ import 'codemirror/addon/hint/show-hint.css';
 import 'codemirror/addon/hint/javascript-hint.js';
 import 'codemirror/addon/lint/javascript-lint.js';
 import 'codemirror'
+import { SaveValues } from './save-values';
 
 
 
@@ -19,9 +20,10 @@ export class CodeMirrorEditor {
     public mode: string;
 
     public editorHost: HTMLTextAreaElement;
+    private codeMirror: any;
 
     public attached(): void {
-        var myCodeMirror = CodeMirror.fromTextArea(this.editorHost, {
+        this.codeMirror = CodeMirror.fromTextArea(this.editorHost, {
             mode: this.mode,
             lineNumbers: true,
             theme: "base16-dark",
@@ -30,5 +32,17 @@ export class CodeMirrorEditor {
                 "Ctrl-Space": "autocomplete",
             },
         });
+    }
+
+    protected save() {
+        var text = this.codeMirror.getValue();
+
+        switch (this.mode) {
+            case "html":
+                SaveValues.downloadString(text, "text/html", "code.html");
+                break;
+            case "javascript":
+                SaveValues.downloadString(text, "text/javascript", "code.js");
+        }
     }
 }
