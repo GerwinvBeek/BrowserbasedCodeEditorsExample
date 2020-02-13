@@ -37,4 +37,20 @@ export class MonacoEditor {
                 SaveValues.downloadString(text, "text/typescript", "code.ts");
         }
     }
+
+    protected insertHelloWorld() {
+        var selection = this.editor.getSelection();
+        var id = { major: 1, minor: 1 };
+        var text = "function helloWorld(){console.log('HelloWorld')};";
+        var op = { identifier: id, range: selection, text: text, forceMoveMarkers: true };
+        this.editor.executeEdits("my-source", [op]);
+    }
+
+    protected insertButton() {
+        var selection = this.editor.getSelection();
+        var id = { major: 1, minor: 1 };
+        var text = "<button>This is a button</button>";
+        var op = { identifier: id, range: selection, text: text, forceMoveMarkers: true };
+        this.editor.executeEdits("my-source", [op]);
+    }
 }

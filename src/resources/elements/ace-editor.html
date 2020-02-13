@@ -1,4 +1,6 @@
 <template>
     <div ref="editorHost" style="height:350px;"></div>    
     <button click.delegate="save()">Save Code</button>
+    <button if.bind="mode == 'javascript'" click.delegate="insertHelloWorld()">Insert Hello World</button>
+    <button if.bind="mode == 'html'" click.delegate="insertButton()">Insert Button</button>
 </template>

@@ -45,4 +45,14 @@ export class CodeMirrorEditor {
                 SaveValues.downloadString(text, "text/javascript", "code.js");
         }
     }
+
+    protected insertHelloWorld() {
+        var text = "function helloWorld(){console.log('HelloWorld')};";
+        this.codeMirror.replaceSelection(text);
+    }
+
+    protected insertButton() {
+        var text = "<button>This is a button</button>";
+        this.codeMirror.replaceSelection(text);
+    }
 }

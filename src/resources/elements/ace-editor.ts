@@ -36,4 +36,16 @@ export class AceEditor {
                 SaveValues.downloadString(text, "text/javascript", "code.js");
         }
     }
+
+
+    protected insertHelloWorld() {
+        var text = "function helloWorld(){console.log('HelloWorld')};";
+        this.editor.session.insert(this.editor.getCursorPosition(), text)
+    }
+
+    protected insertButton() {
+        var text = "<button>This is a button</button>";
+        this.editor.session.insert(this.editor.getCursorPosition(), text)
+    }
+
 }
