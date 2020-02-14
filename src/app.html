@@ -1,42 +1,39 @@
 <template>
-  <require from="./resources/elements/monaco-editor"></require>
-  <require from="./resources/elements/code-mirror-editor"></require>
-  <require from="./resources/elements/ace-editor"></require>
-
-
   <h3>Monaco</h3>
   <div id="editor">
     <div id="code">
       <h5>typescript</h5>
-      <monaco-editor mode="typescript" />
+      <monaco-editor mode="typescript"/>
     </div>
     <div id="code">
       <h5>html</h5>
-      <monaco-editor mode="html" />
+      <monaco-editor mode="html" code.two-way="monacohtml" />
     </div>
   </div>
+  <h3>Preview Monaco html:</h3>
+  <compose view.bind="monacohtml"></compose>
+  
+    <h3>Code Mirror</h3>
+    <div id="editor">
+      <div id="code">
+        <h5>javascript</h5>
+        <code-mirror-editor mode="javascript" />
+      </div>
+      <div id="code">
+        <h5>html</h5>
+        <code-mirror-editor mode="html" />
+      </div>
+    </div>
 
-  <h3>Code Mirror</h3>
-  <div id="editor">
-    <div id="code">
-      <h5>javascript</h5>
-      <code-mirror-editor mode="javascript" />
+    <h3>Ace</h3>
+    <div id="editor">
+      <div id="code">
+        <h5>javascript</h5>
+        <ace-editor mode="javascript" />
+      </div>
+      <div id="code">
+        <h5>html</h5>
+        <ace-editor mode="html" />
+      </div>
     </div>
-    <div id="code">
-      <h5>html</h5>
-      <code-mirror-editor mode="html" />
-    </div>
-  </div>
-
-  <h3>Ace</h3>
-  <div id="editor">
-    <div id="code">
-      <h5>javascript</h5>
-      <ace-editor mode="javascript" />
-    </div>
-    <div id="code">
-      <h5>html</h5>
-      <ace-editor mode="html" />
-    </div>
-  </div>
 </template>

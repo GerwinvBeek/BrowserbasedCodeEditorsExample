@@ -1,4 +1,4 @@
-import { autoinject, bindable, customElement, transient } from 'aurelia-framework';
+import { autoinject, bindable, customElement, transient, InlineViewStrategy } from 'aurelia-framework';
 import * as monaco from "monaco-editor";
 import { SaveValues } from "./save-values"; 
 
@@ -9,6 +9,9 @@ export class MonacoEditor {
     public mode: string;
 
     public editorHost: HTMLElement;
+
+    @bindable
+    public code: any;
 
     private editor: monaco.editor.IStandaloneCodeEditor;
 
@@ -28,7 +31,7 @@ export class MonacoEditor {
 
     protected save() {
         var text = this.editor.getValue();
-
+        
         switch (this.mode) {
             case "html":
                 SaveValues.downloadString(text, "text/html", "code.html");
@@ -36,6 +39,11 @@ export class MonacoEditor {
             case "typescript":
                 SaveValues.downloadString(text, "text/typescript", "code.ts");
         }
+    }
+
+    protected preview(){
+        var text = this.editor.getValue();
+        this.code = new InlineViewStrategy('<template>' + text + '</template>');
     }
 
     protected insertHelloWorld() {
